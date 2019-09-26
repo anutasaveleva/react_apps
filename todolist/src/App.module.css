@@ -28,6 +28,20 @@
   margin-left: 16px;
 }
 
+.listContainer {
+  padding-top: 16px;
+}
+.listItem {
+  height: 46px;
+  border-bottom: 1px solid darkgray;
+  display: flex;
+  align-items: center;
+}
+
+.todoTitle {
+  margin-bottom: 0px ;
+  margin-left: 5px;
+}
 p {
   font-size: 10px;
 }
