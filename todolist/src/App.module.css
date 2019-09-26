@@ -1,0 +1,33 @@
+.button {
+  background-color: green;
+}
+
+#myid {
+
+}
+
+.myClass .subClass .subSubClass{
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 400px;
+  padding-top: 48px ;
+}
+
+.inputContainer {
+  display: flex;
+}
+
+.actionButton {
+  margin-left: 16px;
+}
+
+p {
+  font-size: 10px;
+}

@@ -1,10 +1,18 @@
 import React from 'react';
-import './App.css';
+import styles from "./App.module.css";
+import {Input, Button} from "antd";
 
 function App() {
   return (
-    <div>
-        todo app
+    <div className={styles.container}>
+        <div className={styles.content}>
+
+            <div className={styles.inputContainer}>
+            <Input/>
+            <Button type="primary" className={styles.actionButton}> Add </Button>
+            </div>
+
+        </div>
     </div>
   );
 }
