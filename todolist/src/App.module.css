@@ -28,6 +28,10 @@
   margin-left: 16px;
 }
 
+.deleteButton {
+  float: right;
+}
+
 .listContainer {
   padding-top: 16px;
 }
