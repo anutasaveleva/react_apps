@@ -29,7 +29,7 @@
 }
 
 .deleteButton {
-  float: right;
+  justify-content: end;
 }
 
 .listContainer {
