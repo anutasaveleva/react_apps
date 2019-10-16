@@ -23,8 +23,8 @@ function App() {
                     onClick={addTodo}> Add </Button>
                         </div>
             </div>
-            { isChecked ?
-                todos.filter(item => item.resolved===true)
+            { (isChecked ?
+                (todos.filter(item => item.resolved===true)):(todos.filter(item=>item)))
                     .map((todo) => (<ToDoItem key={todo.id}
                                                   id={todo.id}
                                                   value={todo.value}
@@ -37,19 +37,6 @@ function App() {
                                               updateTodo={updateTodo}
                                               setInput={setInput}
                 />))
-            :
-            todos.map((todo)=> (<ToDoItem key={todo.id}
-                                           id={todo.id}
-                                           value={todo.value}
-                                          edit = {todo.edit}
-                                          setInput={setInput}
-                                           resolved={todo.resolved}
-                                           toggleTodo={toggleTodo}
-                                           deleteTodo={deleteTodo}
-                                          editTodo = {editTodo}
-                                          addTodo={addTodo}
-                                          updateTodo={updateTodo}
-            />))
             }
         </div>
     </div>
@@ -63,6 +50,7 @@ function App() {
       const lastid = todos.length === 0 ? 0: todos[todos.length-1].id + 1;
       const myItems = [...todos, {value:todo, resolved:false, id:lastid, edit:false}];
       setTodos(myItems);
+      setInput();
       console.log(myItems);
   }
 
@@ -94,7 +82,6 @@ function App() {
     function updateTodo(id) {
         const idx = todos.findIndex(todo => todo.id === id);
         const newTodos = [...todos];
-        const todo_val = input;
         let todo = todos[idx];
         todo={...todo, value:input, edit: !todo.edit};
         newTodos[idx]=todo;
@@ -104,7 +91,7 @@ function App() {
 }
 
 function ToDoItem(props) {
-    const {id, value, edit, toggleTodo, resolved, deleteTodo, editTodo, updateTodo, setInput} = props;
+    const {id, value, edit, toggleTodo, resolved, deleteTodo, editTodo, updateTodo} = props;
 
     return (<div className={styles.listContainer} >
         <div className={styles.listItem} >
